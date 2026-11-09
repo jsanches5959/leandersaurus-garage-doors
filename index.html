@@ -400,6 +400,26 @@
       .footprint-media figcaption { background: var(--surface); padding: 14px 18px; font-size: .98rem; color: var(--ink-2); border-top: 1px solid var(--line); }
       .footprint-media figcaption b { color: var(--ink); }
 
+      /* ---------- How to pay ---------- */
+      .pay-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow); }
+      .pay-card p.lede { color: var(--ink-2); max-width: 760px; margin: 0 0 26px; font-size: 1.06rem; line-height: 1.6; }
+      .pay-card p.lede b { color: var(--ink); }
+      .pay-grid { display: grid; gap: 14px; }
+      @media (min-width: 700px) { .pay-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1024px) { .pay-grid { grid-template-columns: repeat(4, 1fr); } }
+      .pay-method { background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 20px 18px; display: flex; flex-direction: column; gap: 6px; }
+      .pay-method.preferred { border-color: var(--orange); background: var(--accent-soft); }
+      .pay-method .pm-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 2px; }
+      .pay-method .pm-icon { width: 38px; height: 38px; border-radius: 9px; display: grid; place-items: center; background: var(--surface); border: 1px solid var(--line); color: var(--orange-hi); flex: none; }
+      .pay-method .pm-icon svg { width: 20px; height: 20px; }
+      .pay-badge { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: var(--orange); border-radius: 999px; padding: 4px 10px; line-height: 1; white-space: nowrap; }
+      .pay-method h3 { margin: 0; font-size: 1.35rem; font-weight: 700; line-height: 1.05; }
+      .pay-method p { margin: 0; color: var(--ink-2); font-size: .95rem; line-height: 1.45; }
+      .pay-note { display: flex; gap: 12px; align-items: flex-start; margin-top: 22px; padding-top: 20px; border-top: 1px dashed var(--line); color: var(--ink-2); }
+      .pay-note svg { width: 22px; height: 22px; flex: none; color: var(--orange-hi); margin-top: 2px; }
+      .pay-note p { margin: 0; }
+      .pay-note b { color: var(--ink); }
+
       /* ---------- Request service (Jobber) ---------- */
       .request-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow); }
       .request-card p.lede { color: var(--ink-2); max-width: 680px; margin: 0 0 20px; font-size: 1.05rem; }
@@ -805,6 +825,52 @@
         </div>
       </section>
 
+      <!-- HOW TO PAY -->
+      <section class="section" id="pay" style="padding-top:0">
+        <div class="wrap">
+          <div class="pay-card">
+            <span class="kicker" data-i18n="pay-kicker">Easy payment</span>
+            <h2 data-i18n="pay-h2">How to pay</h2>
+            <p class="lede" data-i18n="pay-p">We're a <b>small local crew, not a franchise</b> — paying us is simple. <b>Zelle is our favorite</b> (no fees on either end, lands instantly). We also take all major cards — Visa, Mastercard, Amex, Discover — plus Apple Pay and Google Pay through our Jobber invoice, and bank transfer (ACH) for bigger jobs like a full door replacement. You pay when the work is done and you've seen it work — <b>the written price is the price, no surprises added at payment time.</b></p>
+            <div class="pay-grid">
+              <div class="pay-method preferred">
+                <div class="pm-top">
+                  <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></span>
+                  <span class="pay-badge" data-i18n="pay-zelle-badge">Preferred</span>
+                </div>
+                <h3 data-i18n="pay-zelle-t">Zelle</h3>
+                <p data-i18n="pay-zelle-d">Our favorite way to get paid. Send it right from your bank app — no fees for you or for us, and it lands instantly.</p>
+              </div>
+              <div class="pay-method">
+                <div class="pm-top">
+                  <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+                </div>
+                <h3 data-i18n="pay-cards-t">Credit &amp; debit cards</h3>
+                <p data-i18n="pay-cards-d">Visa, Mastercard, Amex, and Discover — pay online through your Jobber invoice or in person when the job's done.</p>
+              </div>
+              <div class="pay-method">
+                <div class="pm-top">
+                  <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/></svg></span>
+                </div>
+                <h3 data-i18n="pay-wallets-t">Apple Pay &amp; Google Pay</h3>
+                <p data-i18n="pay-wallets-d">Tap to pay through the invoice link we send you — no card numbers to type, done in seconds.</p>
+              </div>
+              <div class="pay-method">
+                <div class="pm-top">
+                  <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M4 18h16M6 18v-7M10 18v-7M14 18v-7M18 18v-7M12 3 2 9h20L12 3Z"/></svg></span>
+                </div>
+                <h3 data-i18n="pay-ach-t">Bank transfer (ACH)</h3>
+                <p data-i18n="pay-ach-d">A good fit for bigger jobs, like a full door replacement — pay straight from your bank account through the invoice.</p>
+              </div>
+            </div>
+            <div class="pay-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+              <p data-i18n="pay-note"><b>Pay when it's done.</b> You don't pay until the work is finished and you've seen the door run. Every job comes with an invoice through Jobber, so you always have a clear record of what was done and what you paid.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- REQUEST SERVICE / JOBBER FORM -->
       <section class="section" id="contact" style="padding-top:0">
         <div class="wrap">
@@ -942,6 +1008,19 @@
           "meet-call": "Llama a José",
           "story-cap": "<b>Encontrada en una cochera de Leander.</b> 115 millones de años después, las huellas siguen apareciendo aquí — y cuando la puerta detrás de ellas no abre, el equipo Leandersaurus se encarga del trabajo pesado.",
           "hero-badge-cap": "La insignia del camión, del correo y ahora del sitio web — un solo Leandersaurus, en todos lados donde nos encuentres.",
+          "pay-kicker": "Pago fácil",
+          "pay-h2": "Cómo pagar",
+          "pay-p": "Somos un <b>equipo local pequeño, no una franquicia</b> — pagarnos es sencillo. <b>Zelle es nuestra opción favorita</b> (sin cargos para nadie, llega al instante). También aceptamos todas las tarjetas principales — Visa, Mastercard, Amex, Discover — además de Apple Pay y Google Pay a través de nuestra factura de Jobber, y transferencia bancaria (ACH) para trabajos más grandes como el reemplazo completo de una puerta. Pagas cuando el trabajo está terminado y ya viste que funciona — <b>el precio por escrito es el precio, sin sorpresas añadidas al momento de pagar.</b>",
+          "pay-zelle-badge": "Preferido",
+          "pay-zelle-t": "Zelle",
+          "pay-zelle-d": "Nuestra forma favorita de cobrar. Envíalo directo desde la app de tu banco — sin cargos para ti ni para nosotros, y llega al instante.",
+          "pay-cards-t": "Tarjetas de crédito y débito",
+          "pay-cards-d": "Visa, Mastercard, Amex y Discover — paga en línea a través de tu factura de Jobber o en persona cuando el trabajo esté terminado.",
+          "pay-wallets-t": "Apple Pay y Google Pay",
+          "pay-wallets-d": "Paga con un toque a través del enlace de la factura que te enviamos — sin escribir números de tarjeta, listo en segundos.",
+          "pay-ach-t": "Transferencia bancaria (ACH)",
+          "pay-ach-d": "Una buena opción para trabajos más grandes, como el reemplazo completo de una puerta — paga directo desde tu cuenta bancaria a través de la factura.",
+          "pay-note": "<b>Pagas cuando está terminado.</b> No pagas hasta que el trabajo esté terminado y ya viste la puerta funcionar. Cada trabajo incluye una factura a través de Jobber, para que siempre tengas un registro claro de lo que se hizo y lo que pagaste.",
           "rq-kicker": "Pide servicio",
           "rq-h2": "Recibe mi precio por escrito",
           "rq-p": "Cuéntanos tu nombre, teléfono, ciudad y qué está haciendo la puerta — resorte roto, problema del abridor, puerta fuera de riel o una puerta completamente nueva. Envía la solicitud y José te responde con la ventana real de hoy y un precio por escrito en cuanto vea el trabajo. ¿Prefieres hablar? Llama o manda un texto al <a href=\"tel:+15126638867\" style=\"color:var(--orange-hi);font-weight:700\">512-663-8867</a>, o escribe a <a href=\"mailto:hello@leandersaurusgaragedoors.com\" style=\"color:var(--orange-hi);font-weight:700\">hello@leandersaurusgaragedoors.com</a>.",
